@@ -1,7 +1,5 @@
 package com.api.ArquiteturaLimpa.Infrastructure.Persistence;
 
-import com.api.ArquiteturaLimpa.Domain.Entity.Pessoa;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +17,7 @@ public class DocumentoEntity {
 	private Long id;
 	
 	@ManyToOne
-	private Pessoa pessoa;
+	private PessoaEntity pessoa;
 
 	@Column
 	private String tipo;

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.ArquiteturaLimpa.Application.Gateways.SetorGateway;
 import com.api.ArquiteturaLimpa.Domain.Entity.Setor;
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.SetorEntity;
 
 @Service
 public class CrudSetorInterector {
@@ -16,15 +17,15 @@ public class CrudSetorInterector {
 		this.setorGateway = setorGateway;
 	}
 
-	public void salvar(Setor cliente) {
-		setorGateway.salvar(cliente);
+	public void salvar(SetorEntity setor) {
+		setorGateway.salvar(setor);
 	}
 
-	public List<Setor> listaSetor() {
+	public List<SetorEntity> listaSetor() {
 		return setorGateway.listaSetor();
 	}
-
-	public Optional<Setor> buscarPorId(Long id) {
+	
+	public Optional<SetorEntity> buscarPorId(Long id) {
 		return setorGateway.buscarPorId(id);
 	}
 

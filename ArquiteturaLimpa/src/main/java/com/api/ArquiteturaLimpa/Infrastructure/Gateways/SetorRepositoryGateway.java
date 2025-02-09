@@ -34,5 +34,4 @@ public class SetorRepositoryGateway implements SetorGateway {
 	public List<SetorEntity> listaSetor() {
 		return setorRepository.findAll();
 	}
-
 }

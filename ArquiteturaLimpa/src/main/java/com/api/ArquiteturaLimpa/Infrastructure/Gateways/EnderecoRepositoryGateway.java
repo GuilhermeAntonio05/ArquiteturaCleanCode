@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.api.ArquiteturaLimpa.Application.Gateways.EnderecoGateway;
+import com.api.ArquiteturaLimpa.Domain.Entity.Endereco;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.EnderecoEntity;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.EnderecoRepository;
 
@@ -16,8 +17,8 @@ public class EnderecoRepositoryGateway implements EnderecoGateway {
 	}
 
 	@Override
-	public void salvar(EnderecoEntity endereco) {
-		enderecoRepository.save(endereco);
+	public void salvar(EnderecoEntity enderecoEntity) {
+		enderecoRepository.save(enderecoEntity);
 	}
 
 	@Override

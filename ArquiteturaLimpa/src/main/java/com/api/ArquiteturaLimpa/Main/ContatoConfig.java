@@ -3,27 +3,28 @@ package com.api.ArquiteturaLimpa.Main;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.api.ArquiteturaLimpa.Application.Gateways.PessoaGateway;
-import com.api.ArquiteturaLimpa.Application.UseCases.CrudPessoaInterector;
-import com.api.ArquiteturaLimpa.Infrastructure.Gateways.PessoaEntityMapper;
-import com.api.ArquiteturaLimpa.Infrastructure.Gateways.PessoaRepositoryGateway;
-import com.api.ArquiteturaLimpa.Infrastructure.Persistence.PessoaRepository;
+import com.api.ArquiteturaLimpa.Application.Gateways.ContatoGateway;
+import com.api.ArquiteturaLimpa.Application.UseCases.CrudContatoInterector;
+import com.api.ArquiteturaLimpa.Infrastructure.Gateways.ContatoEntityMapper;
+import com.api.ArquiteturaLimpa.Infrastructure.Gateways.ContatoRepositoryGateway;
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.ContatoRepository;
 
 @Configuration
 public class ContatoConfig {
 
 	@Bean
-	CrudPessoaInterector createPessoaCase(PessoaGateway PessoaGateway) {
-		return new CrudPessoaInterector(PessoaGateway);
+	CrudContatoInterector createContatoCase(ContatoGateway ContatoGateway) {
+		return new CrudContatoInterector(ContatoGateway);
 	}
 
 	@Bean
-	PessoaGateway pessoaGateway(PessoaRepository pessoaRepository) {
-		return new PessoaRepositoryGateway(pessoaRepository);
+	ContatoGateway contatoGateway(ContatoRepository ContatoRepository) {
+		return new ContatoRepositoryGateway(ContatoRepository);
 	}
 	
 	@Bean
-	PessoaEntityMapper pessoaEntityMapper () {
-		return new PessoaEntityMapper();
+	ContatoEntityMapper contatoEntityMapper(){
+		return new ContatoEntityMapper();
 	}
+	
 }

@@ -16,13 +16,13 @@ public class DocumentoRepositoryGateway implements DocumentoGateway {
 	}
 
 	@Override
-	public void salvar(DocumentoEntity documento) {
-		documentoRepository.save(documento);
+	public void salvar(List<DocumentoEntity> list) {
+		documentoRepository.saveAll(list);
 	}
 
 	@Override
-	public void salvarTodos(List<DocumentoEntity> documentos) {
-		documentoRepository.saveAll(documentos);
+	public void salvarTodos(List<DocumentoEntity> documentoEntity) {
+		documentoRepository.saveAll(documentoEntity);
 	}
 
 	@Override
@@ -40,6 +40,5 @@ public class DocumentoRepositoryGateway implements DocumentoGateway {
 		documentoRepository.getReferenceById(id);
 	}
 
-	
 
 }

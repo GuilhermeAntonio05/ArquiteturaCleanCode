@@ -4,19 +4,18 @@ import java.util.List;
 import java.util.Optional;
 
 import com.api.ArquiteturaLimpa.Application.Gateways.ContatoGateway;
-import com.api.ArquiteturaLimpa.Domain.Entity.Contato;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.ContatoEntity;
 
 public class CrudContatoInterector {
 
 	private ContatoGateway contatoGateway;
 
-	public CrudContatoInterector(ContatoGateway contatoRepository) {
+	public CrudContatoInterector(ContatoGateway contatoGateway) {
 		this.contatoGateway = contatoGateway;
 	}
 
-	public void salvar(ContatoEntity contato) {
-		contatoGateway.salvar(contato);
+	public void salvar(List<ContatoEntity> contatoEntity) {
+		contatoGateway.salvarTodos(contatoEntity);
 	}
 
 	public void salvarTodos(List<ContatoEntity> contatos) {

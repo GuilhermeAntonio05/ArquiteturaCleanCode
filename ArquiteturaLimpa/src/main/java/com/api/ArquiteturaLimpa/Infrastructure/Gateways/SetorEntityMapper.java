@@ -4,8 +4,8 @@ import com.api.ArquiteturaLimpa.Domain.Entity.Setor;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.SetorEntity;
 
 public class SetorEntityMapper {
-	public SetorEntity toEntity(Setor setor) {
-		return new SetorEntity(setor.getCargo(),setor.getCargaHoraria());
+	public SetorEntity toEntity(SetorEntity setorEntity) {
+		return new SetorEntity(setorEntity.getCargo(),setorEntity.getCargaHoraria());
 	}
 	
 	public Setor toObj(SetorEntity setor) {

@@ -1,26 +1,32 @@
 package com.api.ArquiteturaLimpa.Domain.Entity;
 
+import java.util.List;
+
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.ContatoEntity;
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.DocumentoEntity;
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.EnderecoEntity;
+import com.api.ArquiteturaLimpa.Infrastructure.Persistence.SetorEntity;
+
 public class Pessoa {
 	private String nome;
-//	private Setor setor;
-//	private List<Contato> contato;
-//	private List<Endereco> endereco;
-//	private List<Documento> documento;
+	private SetorEntity setor;
+	private List<ContatoEntity> contato;
+	private List<EnderecoEntity> endereco;
+	private List<DocumentoEntity> documento;
 	private double salario;
 	private String dataNascimento;
 	private String inscricaoFederal;
-	
+
 	public Pessoa() {
 	}
 
-	public Pessoa(String nome, 
-		//	Setor setor, List<Contato> contato, List<Endereco> endereco, List<Documento> documento,
-			double salario, String dataNascimento, String inscricaoFederal) {
+	public Pessoa(String nome, SetorEntity setorEntity, List<ContatoEntity> list, List<EnderecoEntity> list2,
+			List<DocumentoEntity> list3, double salario, String dataNascimento, String inscricaoFederal) {
 		this.nome = nome;
-	//	this.setor = setor;
-	//	this.contato = contato;
-	//	this.endereco = endereco;
-	//	this.documento = documento;
+		this.setor = setorEntity;
+		this.contato = list;
+		this.endereco = list2;
+		this.documento = list3;
 		this.salario = salario;
 		this.dataNascimento = dataNascimento;
 		this.inscricaoFederal = inscricaoFederal;
@@ -32,6 +38,38 @@ public class Pessoa {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public SetorEntity getSetor() {
+		return setor;
+	}
+
+	public void setSetor(SetorEntity setor) {
+		this.setor = setor;
+	}
+
+	public List<ContatoEntity> getContato() {
+		return contato;
+	}
+
+	public void setContato(List<ContatoEntity> contato) {
+		this.contato = contato;
+	}
+
+	public List<EnderecoEntity> getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(List<EnderecoEntity> endereco) {
+		this.endereco = endereco;
+	}
+
+	public List<DocumentoEntity> getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(List<DocumentoEntity> documento) {
+		this.documento = documento;
 	}
 
 	public double getSalario() {
@@ -63,8 +101,5 @@ public class Pessoa {
 		return "Pessoa [nome=" + nome + ", salario=" + salario + ", dataNascimento=" + dataNascimento
 				+ ", inscricaoFederal=" + inscricaoFederal + "]";
 	}
-	
-	
-	
-	
+
 }

@@ -1,7 +1,5 @@
 package com.api.ArquiteturaLimpa.Infrastructure.Persistence;
 
-import com.api.ArquiteturaLimpa.Domain.Entity.Pessoa;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +16,7 @@ public class EnderecoEntity {
 	private long id;
 	
 	@ManyToOne
-	private Pessoa pessoa;
+	private PessoaEntity pessoa;
 	
 	@Column
 	private String numero;

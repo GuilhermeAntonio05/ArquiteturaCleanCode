@@ -15,16 +15,15 @@ public class CrudDocumentoInterector {
 	private DocumentoGateway documentoGateway;
 	
     public CrudDocumentoInterector(DocumentoGateway documentoGateway) {
-		super();
 		this.documentoGateway = documentoGateway;
 	}
 
-	public void salvar(DocumentoEntity documento){
-		documentoGateway.salvar(documento);
+	public void salvar(List<DocumentoEntity> list){
+		documentoGateway.salvar(list);
     }
 
-    public void salvarTodos(List<DocumentoEntity> documentos){
-    	documentoGateway.salvarTodos(documentos);
+    public void salvarTodos(List<DocumentoEntity> documentoEntity){
+    	documentoGateway.salvarTodos(documentoEntity);
     }
 
     public List<DocumentoEntity> listaDocumento(){

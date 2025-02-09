@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.api.ArquiteturaLimpa.Application.Gateways.ContatoGateway;
+import com.api.ArquiteturaLimpa.Domain.Entity.Contato;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.ContatoEntity;
 import com.api.ArquiteturaLimpa.Infrastructure.Persistence.ContatoRepository;
 
@@ -11,13 +12,13 @@ public class ContatoRepositoryGateway implements ContatoGateway {
 
 	private ContatoRepository contatoRepository;
 
-	public ContatoRepositoryGateway(ContatoRepository contatoRepository) {
-		this.contatoRepository = contatoRepository;
+	public ContatoRepositoryGateway(ContatoRepository contatoRepository2) {
+		this.contatoRepository = contatoRepository2;
 	}
 
 	@Override
-	public void salvar(ContatoEntity contato) {
-		contatoRepository.save(contato);
+	public void salvar(ContatoEntity contatoEntity) {
+		contatoRepository.save(contatoEntity);
 	}
 
 	@Override
